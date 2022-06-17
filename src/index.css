@@ -1,13 +1,247 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: "Lora", serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  width: 1140px;
+  padding: 0px 15px;
+  margin: auto !important;
+}
+
+body {
+  background: hsl(207, 26%, 17%);
+  overflow-x: hidden;
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: hsl(209, 23%, 22%);
+  z-index: 11;
+}
+
+.header h5 {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.country__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+
+.country__card {
+  width: 250px;
+
+  border-radius: 5px;
+  background: hsl(209, 23%, 22%);
+  color: #fff;
+}
+
+.country__img img {
+  width: 100%;
+  height: 150px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.all__country__wrapper {
+  margin-top: 100px;
+}
+
+.country__data {
+  padding: 20px;
+}
+
+.country__data h3 {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.country__data h6 {
+  margin-bottom: 10px;
+  font-weight: 400;
+  opacity: 80%;
+}
+
+.country__bottom h4 {
+  color: #fff;
+  text-align: center;
+  margin-top: 15px;
+}
+
+input {
+  padding: 10px 25px;
+  color: #fff;
+  border-radius: 5px;
+  background: hsl(209, 23%, 22%);
+  border: none;
+  outline: none;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+.country__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+select {
+  padding: 10px 25px;
+  background: hsl(209, 23%, 22%);
+  margin-bottom: 50px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.country__info__wrapper {
+  margin-top: 120px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  
+}
+
+.country__info__container {
+  display: flex;
+  column-gap: 1rem;
+  position: relative;
+  left: 40%;
+  /* bottom: 60rem; */
+
+  
+  bottom: 25rem;
+}
+
+.country__info-img,
+.country__info {
+  width: 50%;
+}
+.country__info{
+  min-height: 50%;
+  min-width: 50%;
+  background-color: hsl(207, 26%, 17%);
+  border-radius: 5px;
+  padding: 20px;
+  color: #fff;
+  z-index: 368;
+  /* border: 2px solid white; */
+  text-align: center;
+  position: relative;
+  right: 25%;
+
+
+
+
+}
+
+button {
+  padding: 10px 25px;
+  color: #fff;
+  background: hsl(209, 23%, 22%);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 120px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.country__info h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+.country__info-left h5 {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.country__info-left h5 span {
+  color: #fff;
+  opacity: 85%;
+  font-weight: 400;
+}
+
+.country_simillar{
+  color: #fff;
+  overflow-y: scroll;
+  height: 70vh;
+  width: 30%;
+  overflow-x: hidden;
+ position: relative;
+ /* right: 5%; */
+ 
+}
+
+.country_simillar_title h3{
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.country_simillar_content{
+  color: #fff;
+  
+}
+.country_simillar_content img{
+  width: 90%;
+  height: 100%;
+  border-radius: 5px;
+  border: none;
+}
+
+.suggestionContainer{
+  position: absolute;
+  list-style: none;
+  background-color: hsla(208, 23%, 22%, 0.89);
+  top: 20%;
+  color: white;
+  border-radius: 5px;
+   padding: 18px 0px;
+   z-index: 999;   
+}
+.suggestionContainer li{
+  color: #fff;
+  padding: 0px 10px;
+  padding-bottom: 10px ;
+  cursor: pointer;
+  min-width: 70%;
+}
+.suggestionContainer>li:not(:last-child){
+  border-bottom: 0.75px solid rgba(0, 0, 0, 0.356);
+  
+}
+.suggestionContainer>li:hover{
+  background-color: hsla(210, 16%, 15%, 0.89);
+  color: #fff;
 }
